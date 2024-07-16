@@ -6,33 +6,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
 // Global variables
 const githubApiUrl = "https://api.github.com/"
 
-
-// githubSearch function
 function githubSearch () {
     // Variables
     const githubForm = document.getElementById("github-form")
     let searchInput = document.getElementById("search")
     let userList = document.getElementById("user-list")
     let reposList = document.getElementById("repos-list")
-    
+
+    function userSearch (e) {
+        e.preventDefault();
+        const searchUser = searchInput.value
+        console.log(searchUser)
+        githubForm.reset()
+    }
+
+    // Event Listeners
+    githubForm.addEventListener('submit', userSearch)
+    // githubForm.addEventListener('submit', repoSearch)
+
     // console.log
     console.log(githubApiUrl)
     console.log(githubForm)
     console.log(searchInput)
     console.log(userList)
     console.log(reposList)
-
-    // Event Listeners
-    githubForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const searchUser = searchInput.value
-        console.log(searchUser)
-        githubForm.reset()
-    })
 }
-
-
-
 
 /*
 The index.html file has a form with a search input. When the form is submitted, it should take the value of the input and search GitHub for user matches using the User Search Endpoint.
