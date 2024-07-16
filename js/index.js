@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 // Global variables
 const githubApiUrl = "https://api.github.com/"
 
+
 // githubSearch function
 function githubSearch () {
     // Variables
@@ -13,13 +14,21 @@ function githubSearch () {
     let searchInput = document.getElementById("search")
     let userList = document.getElementById("user-list")
     let reposList = document.getElementById("repos-list")
-
+    
     // console.log
     console.log(githubApiUrl)
     console.log(githubForm)
     console.log(searchInput)
     console.log(userList)
     console.log(reposList)
+
+    // Event Listeners
+    githubForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const searchUser = searchInput.value
+        console.log(searchUser)
+        githubForm.reset()
+    })
 }
 
 
