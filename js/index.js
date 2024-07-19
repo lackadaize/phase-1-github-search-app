@@ -18,6 +18,18 @@ function githubSearch () {
         const searchUser = searchInput.value
         console.log(searchUser)
         githubForm.reset()
+
+        fetch(`${githubApiUrl}search/users?q=${searchUser}` , {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        })
+        .then(r => r.json())
+        .then((users) => {
+            console.log(typeof users)
+            console.log(users)
+        })
+        .catch(error => console.log(error))
     }
 
     // Event Listeners
