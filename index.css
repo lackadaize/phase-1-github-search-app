@@ -1,13 +1,73 @@
+body {
+  background-color: #c3d8fa;
+} 
+
 #main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+#github-form input {
+  padding: 8px;
+  background-color: #c3d8fa;
+  border: 2px solid #222;
+  color: #222}
+
+input[type="submit" i] {
+  padding: 8px !important;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+input[type="submit" i]:hover {
+  cursor: pointer;
+}
+
 #github-container {
+  width: 80%;
+  margin: 10px auto;
   display: flex;
 }
 
 ul {
   list-style: none;
+}
+
+#user-list {
+  width: 100%;
+  padding: 0;
+}
+
+.user-card {
+  background-color: #fff;
+  box-shadow: 3px 3px 20px 0 rgba(0,0,0,0.5);
+  border: 1px solid #888;
+  padding: 20px 10px;
+  float: left;
+  width: 20%;
+  margin: 0 15px 25px 0;
+}
+.user-avatar, .user-name, .user-url {
+  text-align: center;
+}
+
+.user-name {
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.user-name a:-webkit-any-link {
+  text-decoration: none !important;
+}
+
+.user-avatar img {
+  max-width: 90%;
+  margin: auto;
+}
+
+.user-url {
+  font-size: 12px;
+  font-weight: bold;
 }
